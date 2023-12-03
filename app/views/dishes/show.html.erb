@@ -1,0 +1,116 @@
+<div>
+  <div>
+    <h1>
+      Dish #<%= @the_dish.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/dishes">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_dish/<%= @the_dish.id %>">
+          Delete dish
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Image
+      </dt>
+      <dd>
+        <%= @the_dish.image %>
+      </dd>
+
+      <dt>
+        Name
+      </dt>
+      <dd>
+        <%= @the_dish.name %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_dish.description %>
+      </dd>
+
+      <dt>
+        Recipes count
+      </dt>
+      <dd>
+        <%= @the_dish.recipes_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_dish.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_dish.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit dish
+    </h2>
+
+    <form action="/modify_dish/<%= @the_dish.id %>"  method="post" >
+      <div>
+        <label for="image_box">
+          Image
+        </label>
+
+        <input type="text" id="image_box" name="query_image" value="<%= @the_dish.image %>">
+      </div>
+
+      <div>
+        <label for="name_box">
+          Name
+        </label>
+
+        <input type="text" id="name_box" name="query_name" value="<%= @the_dish.name %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description" value="<%= @the_dish.description %>">
+      </div>
+
+      <div>
+        <label for="recipes_count_box">
+          Recipes count
+        </label>
+
+        <input type="text" id="recipes_count_box" name="query_recipes_count" value="<%= @the_dish.recipes_count %>">
+      </div>
+
+      <button>
+        Update dish
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
