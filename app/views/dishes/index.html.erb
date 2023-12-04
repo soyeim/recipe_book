@@ -13,36 +13,40 @@
     <h2>
       Add a new dish
     </h2>
+    <% if current_user != nil %>
+      <form action="/insert_dish" method="post">
+        <div>
+          <label for="name_box">
+            Name
+          </label>
 
-    <form action="/insert_dish" method="post">
-      <div>
-        <label for="name_box">
-          Name
-        </label>
+          <input type="text" id="name_box" name="query_name">
+        </div>
 
-        <input type="text" id="name_box" name="query_name">
-      </div>
+        <div>
+          <label for="image_box">
+            Image
+          </label>
 
-      <div>
-        <label for="image_box">
-          Image
-        </label>
+          <input type="text" id="image_box" name="query_image" placeholder="Enter a URL for the image">
+        </div>
 
-        <input type="text" id="image_box" name="query_image" placeholder="Enter a URL for the image">
-      </div>
+        <div>
+          <label for="description_box">
+            Description
+          </label>
 
-      <div>
-        <label for="description_box">
-          Description
-        </label>
+          <textarea type="text" id="description_box" name="query_description" placeholder="Enter recipe..."></textarea>
+        </div>
 
-        <textarea type="text" id="description_box" name="query_description" placeholder="Enter recipe..."></textarea>
-      </div>
+        <button>
+          Create dish
+        </button>
+      </form>
+    <% else %>
+      <p>You must <a href="/users/sign_in">sign in</a> to add a recipe.</p>
+    <% end %>
 
-      <button>
-        Create dish
-      </button>
-    </form>
   </div>
 </div>
 
@@ -72,6 +76,7 @@
         </th>
 
         <th>
+          User
         </th>
       </tr>
 

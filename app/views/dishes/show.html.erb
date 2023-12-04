@@ -10,12 +10,7 @@
           Go back
         </a>
       </div>
-
-      <div>
-        <a href="/delete_dish/<%= @the_dish.id %>">
-          Delete dish
-        </a>
-      </div>
+      
     </div>
 
     <dl>
@@ -62,40 +57,50 @@
 
 <div>
   <div>
-    <h2>
-      Edit dish
-    </h2>
+      <h2>
+        Edit dish
+      </h2>
 
-    <form action="/modify_dish/<%= @the_dish.id %>"  method="post" >
+    <% if current_user != nil %>
+      <form action="/modify_dish/<%= @the_dish.id %>"  method="post" >
+        <div>
+          <label for="image_box">
+            Image
+          </label>
+
+          <input type="text" id="image_box" name="query_image" value="<%= @the_dish.image %>">
+        </div>
+
+        <div>
+          <label for="name_box">
+            Name
+          </label>
+
+          <input type="text" id="name_box" name="query_name" value="<%= @the_dish.name %>">
+        </div>
+
+        <div>
+          <label for="description_box">
+            Description
+          </label>
+
+          <input type="text" id="description_box" name="query_description" value="<%= @the_dish.description %>">
+        </div>
+
+        <button>
+          Update dish
+        </button>
+      </form>
+
       <div>
-        <label for="image_box">
-          Image
-        </label>
-
-        <input type="text" id="image_box" name="query_image" value="<%= @the_dish.image %>">
+        <a href="/delete_dish/<%= @the_dish.id %>">
+          Delete dish
+        </a>
       </div>
-
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name" value="<%= @the_dish.name %>">
-      </div>
-
-      <div>
-        <label for="description_box">
-          Description
-        </label>
-
-        <input type="text" id="description_box" name="query_description" value="<%= @the_dish.description %>">
-      </div>
-
-      <button>
-        Update dish
-      </button>
-    </form>
-  </div>
+    <% else %>
+      <p>You must <a href="/users/sign_in">sign in</a> to edit or delete a recipe.</p>
+    <% end %>
+    </div>
 </div>
 
 <hr>

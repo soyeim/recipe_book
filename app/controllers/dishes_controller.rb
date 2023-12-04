@@ -23,6 +23,8 @@ class DishesController < ApplicationController
     the_dish.name = params.fetch("query_name")
     the_dish.description = params.fetch("query_description")
 
+    the_dish.user_id = current_user.id
+
     if the_dish.valid?
       the_dish.save
       redirect_to("/dishes", { :notice => "Dish created successfully." })

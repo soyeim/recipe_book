@@ -9,6 +9,7 @@
 #  recipes_count :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  user_id       :integer
 #
 class Dish < ApplicationRecord
   has_many  :recipes, class_name: "Recipe", foreign_key: "dish_id", dependent: :destroy
