@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Recipe #<%= @the_recipe.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/recipes">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_recipe/<%= @the_recipe.id %>">
+          Delete recipe
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Dish
+      </dt>
+      <dd>
+        <%= @the_recipe.dish_id %>
+      </dd>
+
+      <dt>
+        Instructions
+      </dt>
+      <dd>
+        <%= @the_recipe.instructions %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_recipe.user_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_recipe.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_recipe.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit recipe
+    </h2>
+
+    <form action="/modify_recipe/<%= @the_recipe.id %>"  method="post" >
+      <div>
+        <label for="dish_id_box">
+          Dish
+        </label>
+
+        <input type="text" id="dish_id_box" name="query_dish_id" value="<%= @the_recipe.dish_id %>">
+      </div>
+
+      <div>
+        <label for="instructions_box">
+          Instructions
+        </label>
+
+        <input type="text" id="instructions_box" name="query_instructions" value="<%= @the_recipe.instructions %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_recipe.user_id %>">
+      </div>
+
+      <button>
+        Update recipe
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
