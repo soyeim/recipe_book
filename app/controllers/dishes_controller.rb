@@ -22,7 +22,6 @@ class DishesController < ApplicationController
     the_dish.image = params.fetch("query_image")
     the_dish.name = params.fetch("query_name")
     the_dish.description = params.fetch("query_description")
-    the_dish.recipes_count = params.fetch("query_recipes_count")
 
     if the_dish.valid?
       the_dish.save
@@ -39,7 +38,6 @@ class DishesController < ApplicationController
     the_dish.image = params.fetch("query_image")
     the_dish.name = params.fetch("query_name")
     the_dish.description = params.fetch("query_description")
-    the_dish.recipes_count = params.fetch("query_recipes_count")
 
     if the_dish.valid?
       the_dish.save

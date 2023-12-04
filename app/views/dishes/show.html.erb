@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Dish #<%= @the_dish.id %> details
+      <%= @the_dish.name %> Recipe
     </h1>
 
     <div>
@@ -23,7 +23,7 @@
         Image
       </dt>
       <dd>
-        <%= @the_dish.image %>
+        <img src="<%= @the_dish.image %>" height="300px" width="300px">
       </dd>
 
       <dt>
@@ -38,13 +38,6 @@
       </dt>
       <dd>
         <%= @the_dish.description %>
-      </dd>
-
-      <dt>
-        Recipes count
-      </dt>
-      <dd>
-        <%= @the_dish.recipes_count %>
       </dd>
 
       <dt>
@@ -96,14 +89,6 @@
         </label>
 
         <input type="text" id="description_box" name="query_description" value="<%= @the_dish.description %>">
-      </div>
-
-      <div>
-        <label for="recipes_count_box">
-          Recipes count
-        </label>
-
-        <input type="text" id="recipes_count_box" name="query_recipes_count" value="<%= @the_dish.recipes_count %>">
       </div>
 
       <button>

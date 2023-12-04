@@ -11,5 +11,5 @@
 #  updated_at    :datetime         not null
 #
 class Dish < ApplicationRecord
-  has_many(:recipes)
+  has_many  :recipes, class_name: "Recipe", foreign_key: "dish_id", dependent: :destroy
 end
