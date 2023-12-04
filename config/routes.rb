@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Routes for the Recipe resource:
-
+  root to: "dishes#index"
   # CREATE
   post("/insert_recipe", { :controller => "recipes", :action => "create" })
           
