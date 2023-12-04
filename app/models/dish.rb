@@ -11,4 +11,5 @@
 #  updated_at    :datetime         not null
 #
 class Dish < ApplicationRecord
+  has_many(:recipes)
 end
