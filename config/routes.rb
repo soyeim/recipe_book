@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
 
   root to: "dishes#index"
 
   #------------------------------
 
-  devise_for :users
   # Routes for the Dish resource:
 
   # CREATE
@@ -23,9 +23,8 @@ Rails.application.routes.draw do
   get("/delete_dish/:path_id", { :controller => "dishes", :action => "destroy" })
 
   #------------------------------
-
   get("/users", { :controller => "users", :action => "index"})
-  get("/users/:email", {:controller => "users", :action => "show"})
+  get("/users/:username", {:controller => "users", :action => "show"})
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

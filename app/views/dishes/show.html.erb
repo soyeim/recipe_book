@@ -40,7 +40,7 @@
       </dt>
 
       <dd>
-        <%= @the_dish.poster.email %>
+        <%= @the_dish.poster.username %>
       </dd>
     
       <dt>
@@ -92,7 +92,7 @@
             Description
           </label>
 
-          <input type="text" id="description_box" name="query_description" value="<%= @the_dish.description %>">
+          <textarea type="text" id="description_box" name="query_description" value="<%= @the_dish.description %>"></textarea>
         </div>
 
         <button>

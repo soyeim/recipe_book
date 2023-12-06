@@ -1,0 +1,43 @@
+<h1><%= @the_user.username %></h1>
+
+<table border="1">
+  <tr>
+    <th>
+      Recipes
+    </th>
+
+    <th>
+      Caption
+    </th>
+
+    <th>
+      Posted
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @the_user.own_dishes.each do |a_dish| %>
+
+    <tr>
+      <td>
+        <img src=<%= a_dish.image %>>
+      </td>
+
+      <td>
+        <%= a_dish.description %>
+      </td>
+
+      <td>
+        <%= a_dish.created_at %>
+      </td>
+
+      <td>
+        <a href="/dishes/<%= a_dish.id %>">
+          Show details
+        </a>
+      </td>
+    </tr>
+  <% end %>
+</table>
