@@ -12,5 +12,15 @@
 #  user_id       :integer
 #
 class Dish < ApplicationRecord
-  has_many  :recipes, class_name: "Recipe", foreign_key: "dish_id", dependent: :destroy
+  belongs_to :user, required: true, class_name: "User", foreign_key: "user_id"
+
+  def poster
+    my_user_id = self.user_id
+
+    matching_users = User.where({ :id => my_user_id })
+
+    the_user = matching_users.at(0)
+
+    return the_user
+  end
 end

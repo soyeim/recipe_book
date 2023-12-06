@@ -36,6 +36,14 @@
       </dd>
 
       <dt>
+        User
+      </dt>
+
+      <dd>
+        <%= @the_dish.poster.email %>
+      </dd>
+    
+      <dt>
         Created at
       </dt>
       <dd>
@@ -98,7 +106,7 @@
         </a>
       </div>
     <% else %>
-      <p>You must <a href="/users/sign_in">sign in</a> to edit or delete a recipe.</p>
+      <p>Cannot edit or delete. </p>
     <% end %>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List of all dishes
+      All Recipes
     </h1>
   </div>
 </div>
@@ -33,7 +33,7 @@
 
         <div>
           <label for="description_box">
-            Description
+            Instructions
           </label>
 
           <textarea type="text" id="description_box" name="query_description" placeholder="Enter recipe..."></textarea>
@@ -78,6 +78,10 @@
         <th>
           User
         </th>
+
+        <th>
+          Details
+        </th>
       </tr>
 
       <% @list_of_dishes.each do |a_dish| %>
@@ -101,6 +105,10 @@
           <%= time_ago_in_words(a_dish.updated_at) %> ago
         </td>
 
+        <td>
+          <%= a_dish.poster.email %>
+        </td>
+          
         <td>
           <a href="/dishes/<%= a_dish.id %>">
             Show details

@@ -20,9 +20,9 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many  :recipes, class_name: "Recipe", foreign_key: "user_id", dependent: :destroy
-  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  has_many  :dishes, class_name: "Dish", foreign_key: "user_id", dependent: :destroy
+
 end

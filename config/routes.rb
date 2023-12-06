@@ -1,22 +1,6 @@
 Rails.application.routes.draw do
-  #------------------------------
 
-  # Routes for the Recipe resource:
   root to: "dishes#index"
-  # CREATE
-  post("/insert_recipe", { :controller => "recipes", :action => "create" })
-          
-  # READ
-  get("/recipes", { :controller => "recipes", :action => "index" })
-  
-  get("/recipes/:path_id", { :controller => "recipes", :action => "show" })
-  
-  # UPDATE
-  
-  post("/modify_recipe/:path_id", { :controller => "recipes", :action => "update" })
-  
-  # DELETE
-  get("/delete_recipe/:path_id", { :controller => "recipes", :action => "destroy" })
 
   #------------------------------
 
@@ -39,6 +23,9 @@ Rails.application.routes.draw do
   get("/delete_dish/:path_id", { :controller => "dishes", :action => "destroy" })
 
   #------------------------------
+
+  get("/users", { :controller => "users", :action => "index"})
+  get("/users/:email", {:controller => "users", :action => "show"})
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
