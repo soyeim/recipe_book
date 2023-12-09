@@ -69,7 +69,7 @@
         Edit dish
       </h2>
 
-    <% if current_user != nil %>
+    <% if current_user && current_user.id == @the_dish.user_id %>
       <form action="/modify_dish/<%= @the_dish.id %>"  method="post" >
         <div>
           <label for="image_box">
